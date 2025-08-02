@@ -1,35 +1,25 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect, useState } from "react";
+import "./App.css";
+import emailjs from "@emailjs/browser";
+import { ThemeProvider } from "styled-components";
+import AnimateSections from "./components/AnimateSections";
 
 function App() {
-  const [count, setCount] = useState(0)
+	const [isDarkMode, setDarkMode] = useState(false);
+	const toggleDarkMode = (e) => {
+		setDarkMode(e);
+	};
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+	useEffect(() => {
+		const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+		setDarkMode(mediaQuery.matches);
+	}, []);
+
+	useEffect(() => {
+		emailjs.init(import.meta.env.VITE_PUBLIC_KEY);
+	}, []);
+
+	return <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}></ThemeProvider>;
 }
 
-export default App
+export default App;
