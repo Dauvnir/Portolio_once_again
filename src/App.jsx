@@ -5,6 +5,7 @@ import { ThemeProvider } from "styled-components";
 // import AnimateSections from "./components/AnimateSections";
 import SettingBar from "./mainComponents/SettingBar";
 import { darkTheme, lightTheme } from "./theme/theme";
+import MobileMenu from "./mainComponents/MobileMenu";
 
 function App() {
 	const [isDarkMode, setDarkMode] = useState(false);
@@ -29,6 +30,7 @@ function App() {
 	return (
 		<ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
 			<SettingBar toggle={toggleDarkMode} darkMode={isDarkMode} toggleLang={toggleLang} engLang={isEngLang} />
+			<MobileMenu />
 		</ThemeProvider>
 	);
 }
