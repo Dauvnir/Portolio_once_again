@@ -1,18 +1,40 @@
 #root {
 	position: relative;
 
-	overflow: auto;
+	overflow: hidden;
 
 	font-family: "Nunito Sans", sans-serif;
 	font-style: normal;
 
-	/* height: 100svh;
-	width: 100vw; */
+	height: 100svh;
+	width: 100vw;
+
+	display: flex;
+	flex-direction: column;
+
+	line-height: 1.5;
 }
 
-span {
+span,
+a {
 	/* font-size: clamp(1.25rem, 0.939rem + 1.66vw, 2rem); */
 
 	font-size: 1.5rem;
 	font-weight: 400;
+}
+
+h1 {
+	font-size: 2.5rem;
+	font-weight: 700;
+}
+
+.section {
+	/* // height of section is 100svh - setting bar - mobile menu */
+	height: calc(100svh - 4rem - 5rem);
+	overflow: hidden;
+}
+@media screen and (min-width: 1024px) {
+	.section {
+		height: calc(100svh - 4rem);
+	}
 }

@@ -12,7 +12,8 @@ const Container = styled.div`
 	width: 100%;
 	height: 5rem; // to change
 
-	margin-top: 1rem; // to delete
+	flex-shrink: 0;
+
 	background-color: ${({ theme }) => theme.backgroundColor};
 
 	@media screen and (min-width: 1024px) {
@@ -38,6 +39,7 @@ const Menu = styled.div`
 
 		padding: 8px;
 
+		background-color: ${({ theme }) => theme.menuColor};
 		a {
 			width: 100%;
 			height: 100%;
