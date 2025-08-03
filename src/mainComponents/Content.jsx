@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import HeroSection from "../components/HeroSection";
+import AboutMe from "../components/AboutMeSection";
 
 const Wrapper = styled.div`
 	width: 100%;
@@ -15,6 +16,7 @@ const Content = ({ isEngLang }) => {
 	return (
 		<Wrapper>
 			<HeroSection isEngLang={isEngLang} />
+			<AboutMe isEngLang={isEngLang} />
 		</Wrapper>
 	);
 };

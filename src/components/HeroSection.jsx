@@ -18,14 +18,22 @@ const Section = styled.section`
 		display: flex;
 		flex-direction: row;
 		justify-content: center;
-		align-items: start;
+		align-items: center;
 		flex-wrap: wrap;
 
 		text-align: center;
+
+		@media screen and (min-width: 504px) {
+			gap: clamp(0.5rem, -1.885rem + 7.63vw, 3rem);
+		}
+		@media screen and (min-width: 1024px) {
+			height: 70%;
+			flex-grow: 0;
+		}
+
 		#imgWrapper {
-			margin-block: 0.5rem;
-			width: 12rem;
-			height: 12rem;
+			width: clamp(11rem, 8.375rem + 14vw, 25rem);
+			height: clamp(11rem, 8.375rem + 14vw, 25rem);
 
 			border-radius: 50%;
 			background-color: white;
@@ -45,15 +53,17 @@ const Section = styled.section`
 			align-items: center;
 			flex-direction: column;
 
-			flex-grow: 1;
+			width: fit-content;
+			height: auto;
 
-			gap: 1rem;
-
+			@media screen and (min-width: 504px) {
+				gap: clamp(0.5rem, -0.931rem + 4.58vw, 2rem);
+			}
 			div {
 				display: flex;
 				gap: 2rem;
 				button {
-					width: 6rem;
+					width: clamp(7rem, 5.343rem + 8.84vw, 11rem);
 					height: auto;
 
 					border: none;
@@ -62,18 +72,28 @@ const Section = styled.section`
 					background: none;
 
 					background-color: ${({ theme }) => theme.fontColor};
-
+					border: 3px solid ${({ theme }) => theme.fontColor};
 					border-radius: 15px;
 
-					padding: 0.5rem;
+					padding-block: 0.75rem;
+					padding-inline: clamp(0.5rem, 0.361rem + 0.74vw, 1.25rem);
+
+					will-change: background-color;
+					transition: background-color 0.5s ease;
+					&:hover {
+						background-color: ${({ theme }) => theme.backgroundColor};
+						a {
+							color: ${({ theme }) => theme.fontColor};
+						}
+					}
 					a {
 						color: ${({ theme }) => theme.backgroundColor};
 
 						text-decoration: none;
 						white-space: nowrap;
 
-						font-size: 1.25rem;
-						font-weight: 700;
+						transition: color 0.5s ease;
+						will-change: color;
 					}
 				}
 			}

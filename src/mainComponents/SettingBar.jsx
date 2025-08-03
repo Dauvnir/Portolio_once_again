@@ -13,7 +13,7 @@ const Container = styled.div`
 	width: 100%;
 	height: 4rem; //to change
 
-	padding: 0.5rem; // to change
+	padding: 0.5rem 1rem; // to change
 
 	background-color: ${({ theme }) => theme.backgroundColor};
 

@@ -15,8 +15,7 @@
 	line-height: 1.5;
 }
 
-span,
-a {
+span {
 	/* font-size: clamp(1.25rem, 0.939rem + 1.66vw, 2rem); */
 
 	font-size: 1.5rem;
@@ -24,13 +23,24 @@ a {
 }
 
 h1 {
-	font-size: 2.5rem;
+	font-size: clamp(2rem, 1.378rem + 3.31vw, 3.5rem);
+	font-weight: 700;
+}
+
+h2 {
+	font-size: clamp(1.5rem, 1.086rem + 2.21vw, 2.5rem);
+	font-weight: 600;
+}
+
+a {
+	font-size: clamp(1.25rem, 0.836rem + 2.21vw, 2.25rem);
 	font-weight: 700;
 }
 
 .section {
 	/* // height of section is 100svh - setting bar - mobile menu */
 	height: calc(100svh - 4rem - 5rem);
+	width: 100%;
 	overflow: hidden;
 }
 @media screen and (min-width: 1024px) {

@@ -31,18 +31,16 @@ const Header = styled.h1`
 	color: ${({ theme }) => theme.fontColor};
 	text-align: center;
 
-	font-size: 2rem;
-	font-weight: 700;
-
 	flex-shrink: 1;
 
+	white-space: nowrap;
 	span {
 		font-size: inherit !important;
 		font-weight: inherit;
 	}
 
-	//animate header if more than 611px
-	@media screen and (min-width: 611px) {
+	//animate header if more than 1024px
+	@media screen and (min-width: 1024px) {
 		display: inline-block;
 
 		white-space: nowrap;
@@ -58,8 +56,8 @@ const Header = styled.h1`
 			${({ theme }) => blinkingCursor(theme.fontColor)} 0.75s step-end infinite 4.5s;
 	}
 
-	//animate header if less than 611px
-	@media screen and (max-width: 610px) {
+	//animate header if less than 1023px
+	@media screen and (max-width: 1023px) {
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -68,7 +66,6 @@ const Header = styled.h1`
 
 		span {
 			overflow: hidden;
-			white-space: nowrap;
 			width: 0;
 			max-width: max-content;
 
@@ -94,7 +91,7 @@ const AnimatedHeader = ({ isEngLang }) => {
 	const textPl = ["Pokodujmy i pracujmy razem", "Pokodujmy i ", "pracujmy razem"];
 	const textEng = ["Let us code and work together", "Let us code ", "and work together"];
 
-	const [width, setWidth] = useState(1024);
+	const [width, setWidth] = useState(null);
 
 	useEffect(() => {
 		const innerWidth = window.innerWidth;
@@ -113,7 +110,7 @@ const AnimatedHeader = ({ isEngLang }) => {
 	return (
 		<Header>
 			{isEngLang ? (
-				width < 611 ? (
+				width > 1024 ? (
 					<span>{textEng[0]}</span>
 				) : (
 					<>
@@ -121,7 +118,7 @@ const AnimatedHeader = ({ isEngLang }) => {
 						<span>{textEng[2]}</span>
 					</>
 				)
-			) : width < 611 ? (
+			) : width > 1024 ? (
 				<span>{textPl[0]}</span>
 			) : (
 				<>
