@@ -11,11 +11,13 @@ const Wrapper = styled.div`
 	overflow: scroll;
 
 	background-color: ${({ theme }) => theme.backgroundColor};
+
+	padding: 0 1rem;
 `;
 const Content = ({ isEngLang }) => {
 	return (
 		<Wrapper>
-			<HeroSection isEngLang={isEngLang} />
+			{/* <HeroSection isEngLang={isEngLang} /> */}
 			<AboutMe isEngLang={isEngLang} />
 		</Wrapper>
 	);
