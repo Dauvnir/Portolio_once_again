@@ -21,7 +21,7 @@ const Content = ({ isEngLang }) => {
 		<Wrapper>
 			{/* <HeroSection isEngLang={isEngLang} /> */}
 			{/* <AboutMe isEngLang={isEngLang} /> */}
-			<SkillSection isEngLang={isEngLang} />
+			{/* <SkillSection isEngLang={isEngLang} /> */}
 			<ProjectsSection isEngLang={isEngLang}/> 
 		</Wrapper>
 	);

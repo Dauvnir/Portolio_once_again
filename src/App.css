@@ -37,6 +37,10 @@ h3 {
 	font-weight: 600;
 }
 
+h4{
+	font-size: clamp(1.25rem, 0.939rem + 1.66vw, 2rem);
+	font-weight: 700;
+}
 a {
 	font-size: clamp(1.25rem, 0.836rem + 2.21vw, 2.25rem);
 	font-weight: 700;
@@ -51,5 +55,22 @@ a {
 @media screen and (min-width: 1024px) {
 	.section {
 		height: calc(100svh - 4rem);
+	}
+}
+
+.exclude {
+	height: max-content;
+
+
+}
+@media (min-width: 1024px) {
+	.exclude {
+		height: calc(100svh - 4rem);
+	}
+}
+
+@media (min-width: 930px) and (max-width: 1023px){
+	.exclude {
+		height: calc(100svh - 4rem - 5rem);
 	}
 }
