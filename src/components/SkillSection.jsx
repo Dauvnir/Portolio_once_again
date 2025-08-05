@@ -16,12 +16,9 @@ const skills = [
 	"SASS",
 ];
 
-const Container = styled.div`
+const Container = styled.section`
 	color: ${({ theme }) => theme.fontColor};
 	text-align: center;
-
-	width: 100%;
-	height: 100%;
 
 	display: flex;
 	justify-content: center;
@@ -75,7 +72,7 @@ const Container = styled.div`
 
 const SkillSection = ({ isEngLang }) => {
 	return (
-		<Container>
+		<Container className="section">
 			<h3>{isEngLang ? "Technologies and languages that I used" : "Technologie i języki programowania wykorzystane w projektach"}</h3>
 			<h2>{isEngLang ? "Proficiency" : "Doświadczenie"}</h2>
 			<div id="wrapper">
