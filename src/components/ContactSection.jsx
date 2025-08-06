@@ -162,7 +162,7 @@ const Wrapper = styled.section`
 `;
 const ContactSection = ({ isEngLang }) => {
 	return (
-		<Wrapper className="section exclude">
+		<Wrapper className="section exclude" id="contactForm">
 			<h3>{isEngLang ? "Find me on" : "Znajdź mnie na"}</h3>
 			<h2>{isEngLang ? "Contact" : "Kontakt"}</h2>
 

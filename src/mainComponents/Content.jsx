@@ -15,6 +15,8 @@ const Wrapper = styled.div`
 	background-color: ${({ theme }) => theme.backgroundColor};
 
 	padding: 0 1rem;
+
+	scroll-behavior: smooth;
 `;
 const Content = ({ isEngLang }) => {
 	return (

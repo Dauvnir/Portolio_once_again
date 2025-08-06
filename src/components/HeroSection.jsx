@@ -117,10 +117,12 @@ const HeroSection = ({ isEngLang }) => {
 					</h2>
 					<div>
 						<button>
-							<a href="#">{isEngLang ? "Contact" : "Kontakt"}</a>
+							<a href="#contactForm">{isEngLang ? "Contact" : "Kontakt"}</a>
 						</button>
 						<button>
-							<a href="#">{isEngLang ? "My CV" : "Moje CV"}</a>
+							<a href="cvdemo.txt" download="Patryk_Polak_CV">
+								{isEngLang ? "My CV" : "Moje CV"}
+							</a>
 						</button>
 					</div>
 				</div>
