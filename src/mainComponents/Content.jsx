@@ -3,6 +3,7 @@ import HeroSection from "../components/HeroSection";
 import AboutMe from "../components/AboutMeSection";
 import SkillSection from "../components/SkillSection";
 import ProjectsSection from "../components/ProjectsSection";
+import ContactSection from "../components/ContactSection";
 
 const Wrapper = styled.div`
 	width: 100%;
@@ -20,9 +21,10 @@ const Content = ({ isEngLang }) => {
 	return (
 		<Wrapper>
 			{/* <HeroSection isEngLang={isEngLang} /> */}
-			{/* <AboutMe isEngLang={isEngLang} /> */}
 			{/* <SkillSection isEngLang={isEngLang} /> */}
-			<ProjectsSection isEngLang={isEngLang}/> 
+			{/* <ProjectsSection isEngLang={isEngLang}/>  */}
+			{/* <AboutMe isEngLang={isEngLang} /> */}
+			<ContactSection isEngLang={isEngLang} />
 		</Wrapper>
 	);
 };
