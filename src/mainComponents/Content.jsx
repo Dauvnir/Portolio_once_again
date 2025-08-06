@@ -10,7 +10,6 @@ const Wrapper = styled.div`
 	height: auto;
 
 	flex-grow: 1;
-
 	overflow: scroll;
 
 	background-color: ${({ theme }) => theme.backgroundColor};
@@ -20,10 +19,10 @@ const Wrapper = styled.div`
 const Content = ({ isEngLang }) => {
 	return (
 		<Wrapper>
-			{/* <HeroSection isEngLang={isEngLang} /> */}
-			{/* <SkillSection isEngLang={isEngLang} /> */}
-			{/* <ProjectsSection isEngLang={isEngLang}/>  */}
-			{/* <AboutMe isEngLang={isEngLang} /> */}
+			<HeroSection isEngLang={isEngLang} />
+			<SkillSection isEngLang={isEngLang} />
+			<ProjectsSection isEngLang={isEngLang} />
+			<AboutMe isEngLang={isEngLang} />
 			<ContactSection isEngLang={isEngLang} />
 		</Wrapper>
 	);
