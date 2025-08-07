@@ -26,7 +26,6 @@ const Wrapper = styled.section`
 		}
 		@media screen and (min-width: 1024px) {
 			height: auto;
-			flex-grow: 1;
 
 			column-gap: 1rem;
 			row-gap: 0;
@@ -125,8 +124,11 @@ const Wrapper = styled.section`
 				p {
 					width: 100%;
 					height: auto;
+					flex-grow: 1;
+					/* padding: 0.5rem 0; */
+					padding: 0;
 
-					padding: 0.5rem;
+					font-size: 1rem !important;
 				}
 
 				h4 {
@@ -134,7 +136,17 @@ const Wrapper = styled.section`
 				}
 
 				div {
-					padding-top: 0.25rem;
+					padding-block: .25rem;
+
+					flex-shrink: 0;
+
+					overflow: hidden;
+
+					button{
+						height: 100%;
+
+						padding: 0.25rem;
+					}
 				}
 			}
 			img {
@@ -176,11 +188,11 @@ const ProjectsSection = ({ isEngLang }) => {
 			<div id="track">
 				<div className="block excludeFromFlow">
 					<img src="manlaptop.jpg" alt="" />
-					<h4>{isEngLang ? "Online library" : "Biblioteka online"}</h4>
+					<h4>{isEngLang ? "Library & API" : "Biblioteka i API"}</h4>
 					<p>
-						{isEngLang
-							? "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id tempor sem. Curabitur in tellus maximus, ornare tortor a, rhoncus ligula. Praesent facilisis tellus augue, vel mollis sapien eleifend eu. Ut congue ac libero et feugiat. Nunc et maximus tellus, non ornare tortor. Integer rutrum dignissim faucibus. Donec nec metus sit amet tortor dignissim pretium ut ut enim. Morbi rhoncus elit tellus, quis sagittis nunc egestas at."
-							: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id tempor sem. Curabitur in tellus maximus, ornare tortor a, rhoncus ligula. Praesent facilisis tellus augue, vel mollis sapien eleifend eu. Ut congue ac libero et feugiat. Nunc et maximus tellus, non ornare tortor. Integer rutrum dignissim faucibus. Donec nec metus sit amet tortor dignissim pretium ut ut enim. Morbi rhoncus elit tellus, quis sagittis nunc egestas at."}
+						{isEngLang?
+						"An online library that tracks real-time updates from other websites. Includes a personal collection feature and the ability to create an account, powered by a custom-built Node.js server."
+							: "Biblioteka online śledząca w czasie rzeczywistym aktualizacje z innych stron internetowych. Zawiera funkcję osobistej kolekcji oraz możliwość tworzenia konta, dzięki własnoręcznie stworzonemu serwerowi Node.js."}
 					</p>
 					<div>
 						<button>
@@ -193,12 +205,11 @@ const ProjectsSection = ({ isEngLang }) => {
 				</div>
 				<div className="block excludeFromFlow">
 					<img src="manlaptop.jpg" alt="" />
-					<h4>{isEngLang ? "Online library" : "Biblioteka online"}</h4>
+					<h4>{isEngLang ? "JS Mario game" : "JS gra Mario"}</h4>
 					<p>
 						{isEngLang
-							? "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id tempor sem. Curabitur in tellus maximus, ornare tortor a, rhoncus ligula. Praesent facilisis tellus augue, vel mollis sapien eleifend eu. Ut congue ac libero et feugiat. Nunc et maximus tellus, non ornare tortor. Integer rutrum dignissim faucibus. Donec nec metus sit amet tortor dignissim pretium ut ut enim. Morbi rhoncus elit tellus, quis sagittis nunc egestas at."
-							: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id tempor sem. Curabitur in tellus maximus, ornare tortor a, rhoncus ligula. Praesent facilisis tellus augue, vel mollis sapien eleifend eu. Ut congue ac libero et feugiat. Nunc et maximus tellus, non ornare tortor. Integer rutrum dignissim faucibus. Donec nec metus sit amet tortor dignissim pretium ut ut enim. Morbi rhoncus elit tellus, quis sagittis nunc egestas at."}
-					</p>
+							? "A handmade first level recreation of the popular Mario game. Built using HTML Canvas and game logic implemented with the Kaboom library to replicate the original gameplay. Works on mobile devices (excluding iPhones with Safari)."
+							: "Ręcznie stworzona pierwsza plansza popularnej gry z Mario. Zbudowana z użyciem HTML Canvas oraz logiki gry za pomocą biblioteki Kaboom, aby odwzorować oryginalną rozgrywkę. Działa na urządzeniach mobilnych (z wyjątkiem iPhone z Safari)"}					</p>
 					<div>
 						<button>
 							<span>{isEngLang ? "Try it" : "Sprawdź"}</span>
@@ -210,11 +221,11 @@ const ProjectsSection = ({ isEngLang }) => {
 				</div>
 				<div className="block excludeFromFlow">
 					<img src="manlaptop.jpg" alt="" />
-					<h4>{isEngLang ? "Online library" : "Biblioteka online"}</h4>
+					<h4>{isEngLang ? "Company page" : "Strona firmowa"}</h4>
 					<p>
 						{isEngLang
-							? "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id tempor sem. Curabitur in tellus maximus, ornare tortor a, rhoncus ligula. Praesent facilisis tellus augue, vel mollis sapien eleifend eu. Ut congue ac libero et feugiat. Nunc et maximus tellus, non ornare tortor. Integer rutrum dignissim faucibus. Donec nec metus sit amet tortor dignissim pretium ut ut enim. Morbi rhoncus elit tellus, quis sagittis nunc egestas at."
-							: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id tempor sem. Curabitur in tellus maximus, ornare tortor a, rhoncus ligula. Praesent facilisis tellus augue, vel mollis sapien eleifend eu. Ut congue ac libero et feugiat. Nunc et maximus tellus, non ornare tortor. Integer rutrum dignissim faucibus. Donec nec metus sit amet tortor dignissim pretium ut ut enim. Morbi rhoncus elit tellus, quis sagittis nunc egestas at."}
+							? "A company website I developed while working there, built using React and styled-components. I designed and implemented a unique web experience for a printing company specializing in plotter printing and custom stickers."
+							: "Strona internetowa firmy, którą stworzyłem podczas pracy w tej firmie, zbudowana przy użyciu Reacta oraz biblioteki styled-components. Zaprojektowałem i wdrożyłem unikalną stronę dla firmy zajmującej się drukiem ploterowym i sprzedażą naklejek."}
 					</p>
 					<div>
 						<button>
@@ -228,12 +239,12 @@ const ProjectsSection = ({ isEngLang }) => {
 				<div className="block includeInFlow">
 					<img src="manlaptop.jpg" alt="" />
 					<div className="secondBlock">
-						<h4>{isEngLang ? "Online library" : "Biblioteka online"}</h4>
+						<h4>{isEngLang ? "Library & API" : "Biblioteka i API"}</h4>
 						<p>
-							{isEngLang
-								? "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id tempor sem. Curabitur in tellus maximus, ornare tortor a, rhoncus ligula. Curabitur id tempor sem. Curabitur in tellus maximus, "
-								: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id tempor sem. Curabitur in tellus maximus, ornare tortor a, rhoncus ligula. Curabitur id tempor sem. Curabitur in tellus maximus, "}
-						</p>
+							{isEngLang?
+						"An online library that tracks real-time updates from other websites. Includes a personal collection feature and the ability to create an account, powered by a custom-built Node.js server."
+							: "Biblioteka online śledząca w czasie rzeczywistym aktualizacje z innych stron internetowych. Zawiera funkcję osobistej kolekcji oraz możliwość tworzenia konta, dzięki własnoręcznie stworzonemu serwerowi Node.js."}
+					</p>
 						<div>
 							<button>
 								<span>{isEngLang ? "Try it" : "Sprawdź"}</span>
@@ -247,12 +258,12 @@ const ProjectsSection = ({ isEngLang }) => {
 				<div className="block includeInFlow">
 					<img src="manlaptop.jpg" alt="" />
 					<div className="secondBlock">
-						<h4>{isEngLang ? "Online library" : "Biblioteka online"}</h4>
+						<h4>{isEngLang ? "JS Mario game" : "JS gra Mario"}</h4>
 						<p>
 							{isEngLang
-								? "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id tempor sem. Curabitur in tellus maximus, ornare tortor a, rhoncus ligula. Curabitur id tempor sem. Curabitur in tellus maximus, "
-								: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id tempor sem. Curabitur in tellus maximus, ornare tortor a, rhoncus ligula. Curabitur id tempor sem. Curabitur in tellus maximus, "}
-						</p>
+							? "A handmade first level recreation of the popular Mario game. Built using HTML Canvas and game logic implemented with the Kaboom library to replicate the original gameplay. Works on mobile devices (excluding iPhones with Safari)."
+							: "Ręcznie stworzona pierwsza plansza popularnej gry z Mario. Zbudowana z użyciem HTML Canvas oraz logiki gry za pomocą biblioteki Kaboom, aby odwzorować oryginalną rozgrywkę. Działa na urządzeniach mobilnych (z wyjątkiem iPhone z Safari)"}					</p>
+
 						<div>
 							<button>
 								<span>{isEngLang ? "Try it" : "Sprawdź"}</span>
@@ -266,12 +277,12 @@ const ProjectsSection = ({ isEngLang }) => {
 				<div className="block includeInFlow">
 					<img src="manlaptop.jpg" alt="" />
 					<div className="secondBlock">
-						<h4>{isEngLang ? "Online library" : "Biblioteka online"}</h4>
+						<h4>{isEngLang ? "Company page" : "Strona firmowa"}</h4>
 						<p>
 							{isEngLang
-								? "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id tempor sem. Curabitur in tellus maximus, ornare tortor a, rhoncus ligula. Curabitur id tempor sem. Curabitur in tellus maximus, "
-								: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id tempor sem. Curabitur in tellus maximus, ornare tortor a, rhoncus ligula. Curabitur id tempor sem. Curabitur in tellus maximus, "}
-						</p>
+							? "A company website I developed while working there, built using React and styled-components. I designed and implemented a unique web experience for a printing company specializing in plotter printing and custom stickers."
+							: "Strona internetowa firmy, którą stworzyłem podczas pracy w tej firmie, zbudowana przy użyciu Reacta oraz biblioteki styled-components. Zaprojektowałem i wdrożyłem unikalną stronę dla firmy zajmującej się drukiem ploterowym i sprzedażą naklejek."}
+					</p>
 						<div>
 							<button>
 								<span>{isEngLang ? "Try it" : "Sprawdź"}</span>

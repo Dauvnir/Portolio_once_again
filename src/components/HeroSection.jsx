@@ -117,7 +117,7 @@ const HeroSection = ({ isEngLang }) => {
 					</h2>
 					<div>
 						<button>
-							<a href="#contactForm">{isEngLang ? "Contact" : "Kontakt"}</a>
+							<a href="#contactSection">{isEngLang ? "Contact" : "Kontakt"}</a>
 						</button>
 						<button>
 							<a href="cvdemo.txt" download="Patryk_Polak_CV">
