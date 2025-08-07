@@ -21,11 +21,11 @@ const Wrapper = styled.div`
 const Content = ({ isEngLang }) => {
 	return (
 		<Wrapper>
-			{/* <HeroSection isEngLang={isEngLang} />
-			<SkillSection isEngLang={isEngLang} /> */}
+			<HeroSection isEngLang={isEngLang} />
+			<SkillSection isEngLang={isEngLang} />
 			<ProjectsSection isEngLang={isEngLang} />
-			{/* <AboutMe isEngLang={isEngLang} />
-			<ContactSection isEngLang={isEngLang} /> */}
+			<AboutMe isEngLang={isEngLang} />
+			<ContactSection isEngLang={isEngLang} />
 		</Wrapper>
 	);
 };
