@@ -28,15 +28,16 @@ const Wrapper = styled.section`
 			height: auto;
 			flex-grow: 1;
 
-			column-gap: 0.5rem;
+			column-gap: 1rem;
 			row-gap: 0;
 			align-items: center;
+			flex-wrap: nowrap;
 		}
 	}
 
 	.block {
 		width: 18rem;
-		height: 25rem;
+		height: 22rem;
 
 		display: flex;
 		flex-direction: column;
@@ -107,10 +108,10 @@ const Wrapper = styled.section`
 
 			flex-direction: row;
 
-			gap: 1rem;
+			gap: .25rem;
 
 			.secondBlock {
-				width: 50%;
+				width: 60%;
 				height: 100%;
 
 				display: flex;
@@ -137,13 +138,18 @@ const Wrapper = styled.section`
 				}
 			}
 			img {
-				width: 50%;
+				width: 40%;
 				height: 100%;
 
+				object-fit: contain;
+
 				border-radius: 15px 0 0 15px;
+
+				background-color: rebeccapurple;
 			}
 		}
 	}
+
 	.excludeFromFlow {
 		@media screen and (max-width: 1023px) {
 			display: flex;
@@ -164,7 +170,7 @@ const Wrapper = styled.section`
 
 const ProjectsSection = ({ isEngLang }) => {
 	return (
-		<Wrapper className="section exclude">
+		<Wrapper className="section exclude" id="projectSection">
 			<h3>{isEngLang ? "My coding journey" : "Moja kodowa przygoda"}</h3>
 			<h2>{isEngLang ? "Projects" : "Projekty"}</h2>
 			<div id="track">

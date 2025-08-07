@@ -76,7 +76,7 @@ const Wrapper = styled.section`
 
 const AboutMe = ({ isEngLang }) => {
 	return (
-		<Wrapper className="section">
+		<Wrapper className="section" id="aboutmeSection">
 			<h3>{isEngLang ? "Get to know me more" : "Poznaj mnie lepiej"}</h3>
 			<h2>{isEngLang ? "About me" : "O mnie"}</h2>
 			<div id="wrapper">

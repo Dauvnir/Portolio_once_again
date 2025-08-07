@@ -72,7 +72,7 @@ const Container = styled.section`
 
 const SkillSection = ({ isEngLang }) => {
 	return (
-		<Container className="section">
+		<Container className="section" id="skillsSection">
 			<h3>{isEngLang ? "Technologies and languages that I used" : "Technologie i języki programowania wykorzystane w projektach"}</h3>
 			<h2>{isEngLang ? "Proficiency" : "Doświadczenie"}</h2>
 			<div id="wrapper">

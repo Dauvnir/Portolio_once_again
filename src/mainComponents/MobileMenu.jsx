@@ -80,22 +80,23 @@ const MobileMenu = () => {
 		<Container>
 			<Menu>
 				<button onClick={() => handleClick(0)} className={activeBtn === 0 ? "active" : ""}>
-					<a href="#">
-						<img src={activeBtn === 0 ? theme.menuIcons.activeProfile : theme.menuIcons.profile} alt="about_me" />
+					<a href="#skillsSection">
+						<img src={activeBtn === 0 ? theme.menuIcons.activeResume : theme.menuIcons.resume} alt="resume_skills" />
 					</a>
 				</button>
 				<button onClick={() => handleClick(1)} className={activeBtn === 1 ? "active" : ""}>
-					<a href="#">
+					<a href="#projectSection">
 						<img src={activeBtn === 1 ? theme.menuIcons.activeProject : theme.menuIcons.project} alt="project_list" />
 					</a>
 				</button>
 				<button onClick={() => handleClick(2)} className={activeBtn === 2 ? "active" : ""}>
-					<a href="#">
-						<img src={activeBtn === 2 ? theme.menuIcons.activeResume : theme.menuIcons.resume} alt="resume_skills" />
+					<a href="#aboutmeSection">
+						<img src={activeBtn === 2 ? theme.menuIcons.activeProfile : theme.menuIcons.profile} alt="about_me" />
+
 					</a>
 				</button>
 				<button onClick={() => handleClick(3)} className={activeBtn === 3 ? "active" : ""}>
-					<a href="#">
+					<a href="#contactSection">
 						<img src={activeBtn === 3 ? theme.menuIcons.activeContact : theme.menuIcons.contact} alt="contact_me" />
 					</a>
 				</button>
