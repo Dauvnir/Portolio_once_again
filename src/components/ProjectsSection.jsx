@@ -81,6 +81,9 @@ const Wrapper = styled.section`
 			align-items: center;
 			gap: 1rem;
 			button {
+				display: flex;
+				justify-content: center;
+				align-items: center;
 				width: 7.5rem;
 				height: 3rem;
 
@@ -90,14 +93,23 @@ const Wrapper = styled.section`
 				border: none;
 				cursor: pointer;
 
-				color: ${({ theme }) => theme.fontColor};
 				background-color: ${({ theme }) => theme.backgroundColor};
 
-				span {
+				a{
+					height: 100%;
+					width: 100%;
+					text-decoration: none;
+					color: ${({ theme }) => theme.fontColor};
+
+					font-weight: none;
+					font-size: 0;
+					span {
 					white-space: nowrap;
 					font-weight: 700;
-					font-size: 1.25rem; // to change
+					font-size: 1.25rem;
+					}
 				}
+				
 			}
 		}
 		//--------------------------------- 1024px change of apperance
@@ -149,11 +161,24 @@ const Wrapper = styled.section`
 						will-change: background-color;
 						transition: background-color 0.5s ease;
 						border: 2px solid  ${({ theme }) => theme.backgroundColor};
-						span{
+
+
+						a{
+						height: 100%;
+						width: 100%;
+						text-decoration: none;
+						color: ${({ theme }) => theme.fontColor};
+
+						font-weight: none;
+						font-size: 0;
+						span {
+							white-space: nowrap;
+							font-weight: 700;
+							font-size: 1.25rem;
 							will-change: color;
 							transition: color 0.5s ease;
-
 						}
+						}						
 						&:hover {
 							background-color: ${({ theme }) => theme.menuColor};
 						
@@ -212,10 +237,14 @@ const ProjectsSection = ({ isEngLang }) => {
 					</p>
 					<div>
 						<button>
-							<span>{isEngLang ? "Try it" : "Sprawdź"}</span>
+							<a href="https://astral.patryk-polak.pl" target="_blank">
+								<span>{isEngLang ? "Try it" : "Sprawdź"}</span>
+							</a>
 						</button>
 						<button>
-							<span>GitHub</span>
+							<a href="https://github.com/Dauvnir?tab=repositories&q=&type=&language=&sort=name" target="_blank">
+								<span>GitHub</span>
+							</a>
 						</button>
 					</div>
 				</div>
@@ -228,10 +257,12 @@ const ProjectsSection = ({ isEngLang }) => {
 							: "Ręcznie stworzona pierwsza plansza popularnej gry z Mario. Zbudowana z użyciem HTML Canvas oraz logiki gry za pomocą biblioteki Kaboom, aby odwzorować oryginalną rozgrywkę. Działa na urządzeniach mobilnych (z wyjątkiem iPhone z Safari)"}					</p>
 					<div>
 						<button>
-							<span>{isEngLang ? "Try it" : "Sprawdź"}</span>
+							<a href="https://mario.patryk-polak.pl" target="_blank">
+								<span>{isEngLang ? "Try it" : "Sprawdź"}</span>
+							</a>
 						</button>
 						<button>
-							<span>GitHub</span>
+							<a href="https://github.com/Dauvnir/MarioPortfolio" target="_blank"><span>GitHub</span></a>	
 						</button>
 					</div>
 				</div>
@@ -245,10 +276,10 @@ const ProjectsSection = ({ isEngLang }) => {
 					</p>
 					<div>
 						<button>
-							<span>{isEngLang ? "Try it" : "Sprawdź"}</span>
+							<a href="https://prolabel.patryk-polak.pl" target="_blank"><span>{isEngLang ? "Try it" : "Sprawdź"}</span></a>
 						</button>
 						<button>
-							<span>GitHub</span>
+							<a href="https://github.com/Dauvnir/Company_landing_page" target="_blank"><span>GitHub</span></a>
 						</button>
 					</div>
 				</div>
@@ -263,10 +294,10 @@ const ProjectsSection = ({ isEngLang }) => {
 					</p>
 						<div>
 							<button>
-								<span>{isEngLang ? "Try it" : "Sprawdź"}</span>
+								<a href="https://astral.patryk-polak.pl" target="_blank"><span>{isEngLang ? "Try it" : "Sprawdź"}</span></a>
 							</button>
 							<button>
-								<span>GitHub</span>
+								<a href="https://github.com/Dauvnir?tab=repositories&q=&type=&language=&sort=name" target="_blank"><span>GitHub</span></a>
 							</button>
 						</div>
 					</div>
@@ -282,10 +313,10 @@ const ProjectsSection = ({ isEngLang }) => {
 
 						<div>
 							<button>
-								<span>{isEngLang ? "Try it" : "Sprawdź"}</span>
+								<a href="https://mario.patryk-polak.pl" target="_blank"><span>{isEngLang ? "Try it" : "Sprawdź"}</span></a>
 							</button>
 							<button>
-								<span>GitHub</span>
+								<a href="https://github.com/Dauvnir/MarioPortfolio" target="_blank"><span>GitHub</span></a>
 							</button>
 						</div>
 					</div>
@@ -301,10 +332,10 @@ const ProjectsSection = ({ isEngLang }) => {
 					</p>
 						<div>
 							<button>
-								<span>{isEngLang ? "Try it" : "Sprawdź"}</span>
+								<a href="https://prolabel.patryk-polak.pl" target="_blank"><span>{isEngLang ? "Try it" : "Sprawdź"}</span></a>
 							</button>
 							<button>
-								<span>GitHub</span>
+								<a href="https://github.com/Dauvnir/Company_landing_page" target="_blank"><span>GitHub</span></a>								
 							</button>
 						</div>
 					</div>

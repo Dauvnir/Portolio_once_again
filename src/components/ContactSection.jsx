@@ -1,4 +1,6 @@
+import { useRef, useState } from "react";
 import styled from "styled-components";
+import emailjs from "@emailjs/browser";
 
 const Wrapper = styled.section`
 	color: ${({ theme }) => theme.fontColor};
@@ -30,7 +32,11 @@ const Wrapper = styled.section`
 			align-items: center;
 			flex-direction: column;
 			gap: 1rem;
-
+			a{
+				width: 100%;
+				height: 5rem;
+				text-decoration: none;
+			}
 			button {
 				width: 100%;
 				height: 5rem;
@@ -62,14 +68,16 @@ const Wrapper = styled.section`
 				#github {
 					content: url(${({ theme }) => theme.contactIcons.github});
 				}
-				span {
+
+					span {
 					flex-grow: 1;
 					width: auto;
 
 					font-weight: 700;
 
 					color: ${({ theme }) => theme.reverseFontColor};
-				}
+					}
+
 			}
 		}
 		form {
@@ -142,6 +150,9 @@ const Wrapper = styled.section`
 					font-weight: 600;
 				}
 			}
+			a{
+				
+			}
 			button {
 				width: 8rem;
 				height: auto;
@@ -162,44 +173,146 @@ const Wrapper = styled.section`
 					color: ${({ theme }) => theme.fontColor};
 
 				}
+
 			}
 		}
 	}
 `;
+
+
+
 const ContactSection = ({ isEngLang }) => {
+	const [email, setEmail] = useState("");
+	const [title, setTitle] = useState("");
+	const [msg, setMsg] = useState("");
+	const [error, setError] = useState("");
+	const [disable, setDisable] = useState(false);
+
+	const form = useRef(null);
+
+	const handleEmail = (event) => {
+		setEmail(event.target.value);
+	};
+
+	const handleTitle = (event) => {
+		setTitle(event.target.value);
+	};
+
+	const handleMsg = (event) => {
+		setMsg(event.target.value);
+	};
+
+	const validateForm = () => {
+		const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+		if (!emailRegex.test(email)) {
+			setError(isEngLang ? "Invalid email address" : "Nieprawidłowy adres email");
+			return false;
+		}
+
+		if (title.length < 4) {
+			setError(
+				isEngLang
+					? "Title must be at least 4 characters long"
+					: "Tytuł musi mieć co najmniej 4 znaki"
+			);
+			return false;
+		}
+
+		if (msg.trim() === "") {
+			setError(isEngLang ? "Message cannot be empty" : "Wiadomość nie może być pusta");
+			return false;
+		}
+
+		setError("");
+		return true;
+	};
+
+	const submitMessage = (event) => {
+		event.preventDefault();
+		if (validateForm() && form.current) {
+			emailjs
+				.sendForm(import.meta.env.VITE_SERVICE_ID, import.meta.env.VITE_TEMPLATE_ID, form.current, {
+					publicKey: import.meta.env.VITE_PUBLIC_KEY,
+				})
+				.then(
+					() => {
+						setError(isEngLang ? "Message sent successfully!" : "Wiadomość wysłana pomyślnie!");
+					},
+					(error) => {
+						setError(`${error.text}`);
+					}
+				);
+
+			setEmail("");
+			setTitle("");
+			setMsg("");
+			setDisable(true);
+		}
+	};
 	return (
 		<Wrapper className="section exclude" id="contactSection">
 			<h3>{isEngLang ? "Find me on" : "Znajdź mnie na"}</h3>
 			<h2>{isEngLang ? "Contact" : "Kontakt"}</h2>
 
 			<div id="container">
-				<form>
+				<form onSubmit={submitMessage} ref={form}>
+				{disable && (
+					<div id="blur" content="">
+						<p>{error}</p>
+					</div>
+				)}
+				{error && <p>{error}</p>}
 					<input 
 						type="email" 
 						placeholder={isEngLang ? "Email address" : "Adres email"} 
 						name="email" 
 						autoComplete="none" 
 						required
-						pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"/>
+						pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+						value={email}
+						onChange={handleEmail}
+					/>
 					<input type="text" placeholder={isEngLang ? "Name and surname" : "Imię i nazwisko"} name="name" autoComplete="none" required />
-					<input type="text" placeholder={isEngLang ? "Title" : "Tytuł"} name="title" autoComplete="none" required />
-					<textarea type="text" placeholder={isEngLang ? "Message" : "Wiadomość"} name="message" autoComplete="none" required />
-					<button type="submit">
+					<input 
+					type="text"
+					placeholder={isEngLang ? "Title" : "Tytuł"} 
+					name="title" 
+					autoComplete="none" 
+					required 
+					value={title}
+					onChange={handleTitle}
+					/>
+					<textarea 
+					type="text" 
+					placeholder={isEngLang ? "Message" : "Wiadomość"} 
+					name="message"
+					autoComplete="none"
+					value={msg}
+					onChange={handleMsg} 
+					required />
+					<button type="submit" disabled={disable}>
 						<span>{isEngLang ? "Send" : "Wyślij"}</span>
 					</button>
 				</form>
 				<div id="contactWrapper">
+					<a href="https://t.me/Dauvnir" target="_blank">
 					<button>
 						<img alt="telegram" id="telegram" />
 						<span>Telegram</span>
 					</button>
+					</a>
+					<a href="https://api.whatsapp.com/send/?phone=48887075912&text&type=phone_number&app_absent=0" target="_blank">
 					<button>
-						<img alt="WhatsApp" id="whatsapp" /> <span>WhatsApp</span>
+						<img alt="WhatsApp" id="whatsapp" />
+						<span>WhatsApp</span>
 					</button>
+					</a>
+					<a href="https://github.com/Dauvnir" target="_blank">
 					<button>
 						<img alt="Github" id="github" />
 						<span>Github</span>
 					</button>
+					</a>
 				</div>
 			</div>
 		</Wrapper>
