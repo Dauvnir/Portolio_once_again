@@ -146,6 +146,22 @@ const Wrapper = styled.section`
 						height: 100%;
 
 						padding: 0.25rem;
+						will-change: background-color;
+						transition: background-color 0.5s ease;
+						border: 2px solid  ${({ theme }) => theme.backgroundColor};
+						span{
+							will-change: color;
+							transition: color 0.5s ease;
+
+						}
+						&:hover {
+							background-color: ${({ theme }) => theme.menuColor};
+						
+							span {
+								color: ${({ theme }) => theme.reverseFontColor};
+							}
+					
+						}
 					}
 				}
 			}

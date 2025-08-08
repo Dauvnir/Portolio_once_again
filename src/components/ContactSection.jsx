@@ -80,6 +80,9 @@ const Wrapper = styled.section`
 			flex-wrap: nowrap;
 
 			width: 16rem;
+			@media screen and (min-width: 700px){
+				width: clamp(16rem, 5.839rem + 23.23vw, 25rem);
+			}
 			height: 25rem;
 
 			margin-block: 1rem;
@@ -140,21 +143,24 @@ const Wrapper = styled.section`
 				}
 			}
 			button {
-				width: auto;
+				width: 8rem;
 				height: auto;
 
-				padding: 0.25rem 0.5rem;
+				padding: .5rem 0;
 
 				border-radius: 10px;
 				border: none;
 				outline: none;
-
-				color: ${({ theme }) => theme.fontColor};
+				cursor: pointer;
 
 				background-color: ${({ theme }) => theme.backgroundColor};
-
 				span {
+					will-change: color;
+					transition: color 0.5s ease;
 					font-weight: 600;
+
+					color: ${({ theme }) => theme.fontColor};
+
 				}
 			}
 		}
@@ -162,13 +168,19 @@ const Wrapper = styled.section`
 `;
 const ContactSection = ({ isEngLang }) => {
 	return (
-		<Wrapper className="section exclude" id="contactForm">
+		<Wrapper className="section exclude" id="contactSection">
 			<h3>{isEngLang ? "Find me on" : "Znajdź mnie na"}</h3>
 			<h2>{isEngLang ? "Contact" : "Kontakt"}</h2>
 
 			<div id="container">
 				<form>
-					<input type="email" placeholder={isEngLang ? "Email address" : "Adres email"} name="email" autoComplete="none" required />
+					<input 
+						type="email" 
+						placeholder={isEngLang ? "Email address" : "Adres email"} 
+						name="email" 
+						autoComplete="none" 
+						required
+						pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"/>
 					<input type="text" placeholder={isEngLang ? "Name and surname" : "Imię i nazwisko"} name="name" autoComplete="none" required />
 					<input type="text" placeholder={isEngLang ? "Title" : "Tytuł"} name="title" autoComplete="none" required />
 					<textarea type="text" placeholder={isEngLang ? "Message" : "Wiadomość"} name="message" autoComplete="none" required />
