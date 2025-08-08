@@ -69,6 +69,9 @@ const Wrapper = styled.section`
 			p {
 				width: 100%;
 				height: 100%;
+
+				font-weight: 500;
+				font-size: 1rem;
 			}
 		}
 	}

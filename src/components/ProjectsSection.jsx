@@ -120,7 +120,7 @@ const Wrapper = styled.section`
 
 				gap: 0;
 
-				padding: 0.25rem;
+				padding: 0.25rem .5rem 0.25rem .25rem;
 				p {
 					width: 100%;
 					height: auto;
