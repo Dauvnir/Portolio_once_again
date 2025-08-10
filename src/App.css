@@ -51,9 +51,11 @@ a {
 	height: calc(100svh - 4rem - 5rem);
 	width: 100%;
 	overflow: hidden;
-	
 }
 @media screen and (min-width: 1024px) {
+	h2 {
+		margin-bottom: 2rem;
+	}
 	.section {
 		height: calc(100svh - 4rem);
 	}

@@ -230,7 +230,7 @@ const Wrapper = styled.section`
 const ProjectsSection = ({ isEngLang }) => {
 	return (
 		<Wrapper className="section exclude" id="projectSection">
-			<h3>{isEngLang ? "My coding journey" : "Moja kodowa przygoda"}</h3>
+			<h3>{isEngLang ? "My coding journey" : "Moja programowa przygoda"}</h3>
 			<h2>{isEngLang ? "Projects" : "Projekty"}</h2>
 			<div id="track">
 				<div className="block excludeFromFlow">
