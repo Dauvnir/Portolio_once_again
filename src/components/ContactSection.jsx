@@ -32,7 +32,7 @@ const Wrapper = styled.section`
 			align-items: center;
 			flex-direction: column;
 			gap: 1rem;
-			a{
+			a {
 				width: 100%;
 				height: 5rem;
 				text-decoration: none;
@@ -69,18 +69,19 @@ const Wrapper = styled.section`
 					content: url(${({ theme }) => theme.contactIcons.github});
 				}
 
-					span {
+				span {
 					flex-grow: 1;
 					width: auto;
 
 					font-weight: 700;
 
 					color: ${({ theme }) => theme.reverseFontColor};
-					}
-
+				}
 			}
 		}
 		form {
+			position: relative;
+
 			display: flex;
 			justify-content: center;
 			align-items: center;
@@ -88,10 +89,10 @@ const Wrapper = styled.section`
 			flex-wrap: nowrap;
 
 			width: 16rem;
-			@media screen and (min-width: 700px){
+			@media screen and (min-width: 700px) {
 				width: clamp(16rem, 5.839rem + 23.23vw, 25rem);
 			}
-			height: 25rem;
+			height: auto;
 
 			margin-block: 1rem;
 			padding: 1rem;
@@ -100,6 +101,47 @@ const Wrapper = styled.section`
 
 			background-color: ${({ theme }) => theme.menuColor};
 
+			#errorMsg {
+				width: 100%;
+				height: auto;
+				background-color: ${({ theme }) => theme.backgroundColor};
+
+				padding: 0.25rem 0.5rem;
+				border-radius: 10px;
+
+				font-size: 1.125rem;
+				font-weight: 700;
+				color: ${({ theme }) => theme.fontColor};
+			}
+			#blur {
+				width: 100%;
+				height: 100%;
+
+				position: absolute;
+				top: 0;
+				left: 0;
+
+				z-index: 2;
+
+				backdrop-filter: blur(4px);
+
+				border-radius: 10px;
+
+				display: flex;
+
+				p {
+					width: auto;
+					height: auto;
+
+					margin: auto;
+					padding: 0.5rem;
+
+					font-size: 1.125rem;
+					font-weight: 700;
+					background-color: ${({ theme }) => theme.backgroundColor};
+					border-radius: 10px;
+				}
+			}
 			input {
 				width: 100%;
 				height: 3rem;
@@ -150,14 +192,13 @@ const Wrapper = styled.section`
 					font-weight: 600;
 				}
 			}
-			a{
-				
+			a {
 			}
 			button {
 				width: 8rem;
 				height: auto;
 
-				padding: .5rem 0;
+				padding: 0.5rem 0;
 
 				border-radius: 10px;
 				border: none;
@@ -171,15 +212,11 @@ const Wrapper = styled.section`
 					font-weight: 600;
 
 					color: ${({ theme }) => theme.fontColor};
-
 				}
-
 			}
 		}
 	}
 `;
-
-
 
 const ContactSection = ({ isEngLang }) => {
 	const [email, setEmail] = useState("");
@@ -205,21 +242,17 @@ const ContactSection = ({ isEngLang }) => {
 	const validateForm = () => {
 		const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 		if (!emailRegex.test(email)) {
-			setError(isEngLang ? "Invalid email address" : "Nieprawidłowy adres email");
+			setError(isEngLang ? "Invalid email address." : "Nieprawidłowy adres email.");
 			return false;
 		}
 
 		if (title.length < 4) {
-			setError(
-				isEngLang
-					? "Title must be at least 4 characters long"
-					: "Tytuł musi mieć co najmniej 4 znaki"
-			);
+			setError(isEngLang ? "Title must be at least 4 characters long." : "Tytuł musi mieć co najmniej 4 znaki.");
 			return false;
 		}
 
 		if (msg.trim() === "") {
-			setError(isEngLang ? "Message cannot be empty" : "Wiadomość nie może być pusta");
+			setError(isEngLang ? "Message cannot be empty." : "Wiadomość nie może być pusta.");
 			return false;
 		}
 
@@ -256,62 +289,62 @@ const ContactSection = ({ isEngLang }) => {
 
 			<div id="container">
 				<form onSubmit={submitMessage} ref={form}>
-				{disable && (
-					<div id="blur" content="">
-						<p>{error}</p>
-					</div>
-				)}
-				{error && <p>{error}</p>}
-					<input 
-						type="email" 
-						placeholder={isEngLang ? "Email address" : "Adres email"} 
-						name="email" 
-						autoComplete="none" 
+					{disable && (
+						<div id="blur" content="">
+							<p>{error}</p>
+						</div>
+					)}
+					{error && !disable && <p id="errorMsg">{error}</p>}
+					<input
+						type="email"
+						placeholder={isEngLang ? "Email address" : "Adres email"}
+						name="email"
+						autoComplete="none"
 						required
-						pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
 						value={email}
 						onChange={handleEmail}
 					/>
 					<input type="text" placeholder={isEngLang ? "Name and surname" : "Imię i nazwisko"} name="name" autoComplete="none" required />
-					<input 
-					type="text"
-					placeholder={isEngLang ? "Title" : "Tytuł"} 
-					name="title" 
-					autoComplete="none" 
-					required 
-					value={title}
-					onChange={handleTitle}
+					<input
+						type="text"
+						placeholder={isEngLang ? "Title" : "Tytuł"}
+						name="title"
+						autoComplete="none"
+						required
+						value={title}
+						onChange={handleTitle}
 					/>
-					<textarea 
-					type="text" 
-					placeholder={isEngLang ? "Message" : "Wiadomość"} 
-					name="message"
-					autoComplete="none"
-					value={msg}
-					onChange={handleMsg} 
-					required />
+					<textarea
+						type="text"
+						placeholder={isEngLang ? "Message" : "Wiadomość"}
+						name="message"
+						autoComplete="none"
+						value={msg}
+						onChange={handleMsg}
+						required
+					/>
 					<button type="submit" disabled={disable}>
 						<span>{isEngLang ? "Send" : "Wyślij"}</span>
 					</button>
 				</form>
 				<div id="contactWrapper">
 					<a href="https://t.me/Dauvnir" target="_blank">
-					<button>
-						<img alt="telegram" id="telegram" />
-						<span>Telegram</span>
-					</button>
+						<button>
+							<img alt="telegram" id="telegram" />
+							<span>Telegram</span>
+						</button>
 					</a>
 					<a href="https://api.whatsapp.com/send/?phone=48887075912&text&type=phone_number&app_absent=0" target="_blank">
-					<button>
-						<img alt="WhatsApp" id="whatsapp" />
-						<span>WhatsApp</span>
-					</button>
+						<button>
+							<img alt="WhatsApp" id="whatsapp" />
+							<span>WhatsApp</span>
+						</button>
 					</a>
 					<a href="https://github.com/Dauvnir" target="_blank">
-					<button>
-						<img alt="Github" id="github" />
-						<span>Github</span>
-					</button>
+						<button>
+							<img alt="Github" id="github" />
+							<span>Github</span>
+						</button>
 					</a>
 				</div>
 			</div>
