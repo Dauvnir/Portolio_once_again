@@ -27,6 +27,7 @@ const Wrapper = styled.section`
 
 		color: ${({ theme }) => theme.reverseFontColor};
 		background-color: ${({ theme }) => theme.menuColor};
+		box-shadow: 0 0 2px 0px ${({ theme }) => theme.menuColor};
 
 		width: clamp(16rem, -0.16rem + 86.19vw, 55rem);
 		flex-grow: 1;
