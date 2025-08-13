@@ -36,7 +36,7 @@ const Wrapper = styled.section`
 
 	.block {
 		width: 18rem;
-		height: 22rem;
+		height: 26rem;
 
 		display: flex;
 		flex-direction: column;
@@ -48,8 +48,13 @@ const Wrapper = styled.section`
 
 		border-radius: 15px;
 		img {
-			width: auto;
+			width: 100%;
 			height: 30%;
+
+			object-fit: cover;
+			object-position: center;
+			border-radius: 15px 15px 0 0;
+
 		}
 		h4 {
 			width: 100%;
@@ -198,7 +203,7 @@ const Wrapper = styled.section`
 				width: 40%;
 				height: 100%;
 
-				object-fit: contain;
+				object-fit: cover;
 
 				border-radius: 15px 0 0 15px;
 
@@ -255,7 +260,7 @@ const ProjectsSection = ({ isEngLang }) => {
 					</div>
 				</div>
 				<div className="block excludeFromFlow">
-					<img src="manlaptop.jpg" alt="" />
+					<img src="marioSite1.png" alt="mario" />
 					<h4>{isEngLang ? "JS Mario game" : "JS gra Mario"}</h4>
 					<p>
 						{isEngLang
@@ -320,7 +325,7 @@ const ProjectsSection = ({ isEngLang }) => {
 					</div>
 				</div>
 				<div className="block includeInFlow">
-					<img src="manlaptop.jpg" alt="" />
+					<img src="marioSite2.png" alt="mario" />
 					<div className="secondBlock">
 						<h4>{isEngLang ? "JS Mario game" : "JS gra Mario"}</h4>
 						<p>

@@ -9,13 +9,15 @@ const Wrapper = styled.section`
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+
+	margin-bottom: 2rem;
 	#container {
 		width: 100%;
 		height: auto;
 
 		display: flex;
 		justify-content: center;
-		align-items: center;
+		align-items: flex-start;
 		flex-direction: row;
 		flex-wrap: wrap;
 		gap: 2rem;
@@ -92,9 +94,9 @@ const Wrapper = styled.section`
 			@media screen and (min-width: 700px) {
 				width: clamp(16rem, 5.839rem + 23.23vw, 25rem);
 			}
+
 			height: auto;
 
-			margin-block: 1rem;
 			padding: 1rem;
 			border-radius: 15px;
 			gap: 1rem;
@@ -144,7 +146,7 @@ const Wrapper = styled.section`
 			}
 			input {
 				width: 100%;
-				height: 3rem;
+				height: 2.5rem;
 
 				border-radius: 10px;
 				border: none;
@@ -168,7 +170,7 @@ const Wrapper = styled.section`
 			}
 			textarea {
 				width: 100%;
-				height: 10rem;
+				height: 6rem;
 
 				overflow: scroll;
 				resize: none;
