@@ -21,16 +21,22 @@ const Wrapper = styled.section`
 		height: 100%;
 		overflow: hidden;
 
+		margin: 2rem;
+
 		@media screen and (min-width: 930px) {
 			height: auto;
 		}
 		@media screen and (min-width: 1024px) {
 			height: auto;
 
-			column-gap: 1rem;
+			flex-grow: 1;
+			column-gap: 2rem;
 			row-gap: 0;
 			align-items: center;
-			flex-wrap: nowrap;
+			overflow: hidden;
+		}
+		@media screen and (min-width: 1024px) and (max-height: 610px) {
+			flex-grow: 0;
 		}
 	}
 
@@ -114,8 +120,13 @@ const Wrapper = styled.section`
 		//--------------------------------- 1024px change of apperance
 		@media screen and (min-width: 1024px) {
 			width: clamp(25rem, 7.857rem + 26.79vw, 40rem);
-			height: clamp(15rem, 4.714rem + 16.07vw, 24rem);
+			height: clamp(16rem, 9.143rem + 10.71vw, 22rem);
+			@media screen and (min-width: 1024px) and (max-height: 610px) {
+				width: clamp(19rem, 6.429rem + 19.64vw, 30rem);
+				height: 16rem;
+			}
 
+			align-self: center;
 			flex-direction: row;
 
 			gap: 0.25rem;
