@@ -51,12 +51,14 @@ const Wrapper = styled.section`
 
 		color: ${({ theme }) => theme.reverseFontColor};
 		background-color: ${({ theme }) => theme.menuColor};
+		box-shadow: 0 0 2px 0px ${({ theme }) => theme.menuColor};
 
 		border-radius: 15px;
 
 		@media screen and (max-width: 622px) {
 			width: clamp(18rem, 13.342rem + 24.84vw, 23rem);
 		}
+
 		img {
 			width: auto;
 			height: 30%;
@@ -144,7 +146,7 @@ const Wrapper = styled.section`
 
 				gap: 0;
 
-				padding: 0.25rem 0.5rem 0.25rem 0.25rem;
+				padding-left: 0.25rem;
 				p {
 					width: 100%;
 					height: auto;
