@@ -71,7 +71,9 @@ const Wrapper = styled.section`
 				#github {
 					content: url(${({ theme }) => theme.contactIcons.github});
 				}
-
+				#linkedin {
+					content: url(${({ theme }) => theme.contactIcons.linkedin});
+				}
 				span {
 					flex-grow: 1;
 					width: auto;
@@ -336,8 +338,8 @@ const ContactSection = ({ isEngLang }) => {
 				<div id="contactWrapper">
 					<a href="https://github.com/Dauvnir" target="_blank">
 						<button>
-							<img alt="LinkedIN" id="github" />
-							<span>LinkedIN</span>
+							<img alt="linkedin" id="linkedin" />
+							<span>Linkedin</span>
 						</button>
 					</a>
 					<a href="https://api.whatsapp.com/send/?phone=48887075912&text&type=phone_number&app_absent=0" target="_blank">

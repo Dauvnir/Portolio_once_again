@@ -19,6 +19,7 @@ export const lightTheme = {
 		telegram: "/telegram_blue_light.png",
 		whatsapp: "/whatsup_blue_light.png",
 		github: "/github_blue_light.png",
+		linkedin: "/linkedin_blue_light.png",
 	},
 };
 
@@ -43,5 +44,6 @@ export const darkTheme = {
 		telegram: "/telegram_blue.png",
 		whatsapp: "/whatsup_blue.png",
 		github: "/github_blue.png",
+		linkedin: "/linkedin_blue.png",
 	},
 };
