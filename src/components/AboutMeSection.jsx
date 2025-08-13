@@ -76,6 +76,10 @@ const Wrapper = styled.section`
 
 				font-weight: 500;
 				font-size: 1rem;
+				@media screen and (min-width: 1024px) {
+					font-size: 1.25rem;
+					font-weight: 500;
+				}
 			}
 		}
 	}
