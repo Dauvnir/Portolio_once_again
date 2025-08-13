@@ -51,11 +51,11 @@ a {
 	height: calc(100svh - 4rem - 5rem);
 	width: 100%;
 	overflow: hidden;
+
+	scroll-snap-align: start;
+	scroll-snap-stop: always;
 }
 @media screen and (min-width: 1024px) {
-	h2 {
-		margin-bottom: clamp(1rem, -0.143rem + 1.79vw, 2rem);
-	}
 	.section {
 		height: calc(100svh - 4rem);
 	}

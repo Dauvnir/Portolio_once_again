@@ -3,15 +3,11 @@ import styled from "styled-components";
 
 const Wrapper = styled.div`
 	opacity: 0;
-	transform: translateY(5rem);
-	transition:
-		opacity 0.6s ease-out,
-		transform 0.6s ease-out;
-	will-change: opacity, transform;
+	transition: opacity 1s ease-out;
+	will-change: opacity;
 
 	&.visible {
 		opacity: 1;
-		transform: translateY(0);
 	}
 `;
 

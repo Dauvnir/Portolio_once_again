@@ -22,6 +22,7 @@ const Wrapper = styled.section`
 		flex-wrap: wrap;
 		gap: 2rem;
 
+		margin: 2rem;
 		#contactWrapper {
 			width: 16rem;
 			height: auto;
@@ -184,6 +185,9 @@ const Wrapper = styled.section`
 				border: none;
 
 				box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.25);
+				@media screen and (min-width: 1320px) {
+					height: clamp(6rem, -2.8rem + 10.67vw, 10rem);
+				}
 				&:focus {
 					outline-color: ${({ theme }) => theme.backgroundColor};
 					outline-width: 1px;
@@ -330,16 +334,22 @@ const ContactSection = ({ isEngLang }) => {
 					</button>
 				</form>
 				<div id="contactWrapper">
-					<a href="https://t.me/Dauvnir" target="_blank">
+					<a href="https://github.com/Dauvnir" target="_blank">
 						<button>
-							<img alt="telegram" id="telegram" />
-							<span>Telegram</span>
+							<img alt="LinkedIN" id="github" />
+							<span>LinkedIN</span>
 						</button>
 					</a>
 					<a href="https://api.whatsapp.com/send/?phone=48887075912&text&type=phone_number&app_absent=0" target="_blank">
 						<button>
 							<img alt="WhatsApp" id="whatsapp" />
 							<span>WhatsApp</span>
+						</button>
+					</a>
+					<a href="https://t.me/Dauvnir" target="_blank">
+						<button>
+							<img alt="telegram" id="telegram" />
+							<span>Telegram</span>
 						</button>
 					</a>
 					<a href="https://github.com/Dauvnir" target="_blank">

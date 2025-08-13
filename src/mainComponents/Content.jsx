@@ -10,13 +10,14 @@ const Wrapper = styled.div`
 	height: auto;
 
 	flex-grow: 1;
-	overflow: scroll;
 
 	background-color: ${({ theme }) => theme.backgroundColor};
 
 	padding: 0 1rem;
 
 	scroll-behavior: smooth;
+	scroll-snap-type: y mandatory;
+	overflow-y: scroll;
 `;
 const Content = ({ isEngLang }) => {
 	return (

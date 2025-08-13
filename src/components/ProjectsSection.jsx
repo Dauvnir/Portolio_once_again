@@ -42,7 +42,7 @@ const Wrapper = styled.section`
 
 	.block {
 		width: 18rem;
-		height: 26rem;
+		height: 22rem;
 
 		display: flex;
 		flex-direction: column;
@@ -53,14 +53,15 @@ const Wrapper = styled.section`
 		background-color: ${({ theme }) => theme.menuColor};
 
 		border-radius: 15px;
+
+		@media screen and (max-width: 622px) {
+			width: clamp(18rem, 13.342rem + 24.84vw, 23rem);
+		}
 		img {
-			width: 100%;
+			width: auto;
 			height: 30%;
 
 			object-fit: cover;
-			object-position: center;
-			border-radius: 15px 15px 0 0;
-
 		}
 		h4 {
 			width: 100%;
@@ -125,11 +126,7 @@ const Wrapper = styled.section`
 		//--------------------------------- 1024px change of apperance
 		@media screen and (min-width: 1024px) {
 			width: clamp(25rem, 7.857rem + 26.79vw, 40rem);
-			height: clamp(16rem, 9.143rem + 10.71vw, 22rem);
-			@media screen and (min-width: 1024px) and (max-height: 610px) {
-				width: clamp(19rem, 6.429rem + 19.64vw, 30rem);
-				height: 16rem;
-			}
+			height: 16rem;
 
 			align-self: center;
 			flex-direction: row;
@@ -214,15 +211,16 @@ const Wrapper = styled.section`
 				width: 40%;
 				height: 100%;
 
-				object-fit: cover;
-
 				border-radius: 15px 0 0 15px;
-
-				background-color: rebeccapurple;
 			}
 		}
-	}
-	@media screen and (min-width: 1024px) {
+		@media screen and (min-width: 1320px) {
+			height: clamp(16rem, 7.2rem + 10.67vw, 20rem);
+		}
+		@media screen and (min-width: 1024px) and (max-height: 610px) {
+			width: clamp(19rem, 6.429rem + 19.64vw, 30rem);
+			height: 16rem;
+		}
 	}
 
 	.excludeFromFlow {
@@ -250,8 +248,8 @@ const ProjectsSection = ({ isEngLang }) => {
 			<h2>{isEngLang ? "Projects" : "Projekty"}</h2>
 			<div id="track">
 				<div className="block excludeFromFlow">
-					<img src="manlaptop.jpg" alt="" />
 					<h4>{isEngLang ? "Library & API" : "Biblioteka i API"}</h4>
+					<img src="manlaptop.jpg" alt="" />
 					<p>
 						{isEngLang
 							? "An online library that tracks real-time updates from other websites. Includes a personal collection feature and the ability to create an account, powered by a custom-built Node.js server."
@@ -271,8 +269,9 @@ const ProjectsSection = ({ isEngLang }) => {
 					</div>
 				</div>
 				<div className="block excludeFromFlow">
-					<img src="marioSite1.png" alt="mario" />
 					<h4>{isEngLang ? "JS Mario game" : "JS gra Mario"}</h4>
+					<img src="marioSite1.png" alt="" />
+
 					<p>
 						{isEngLang
 							? "A handmade first level recreation of the popular Mario game. Built using HTML Canvas and game logic implemented with the Kaboom library to replicate the original gameplay. Works on mobile devices (excluding iPhones with Safari)."
@@ -292,8 +291,8 @@ const ProjectsSection = ({ isEngLang }) => {
 					</div>
 				</div>
 				<div className="block excludeFromFlow">
-					<img src="manlaptop.jpg" alt="" />
 					<h4>{isEngLang ? "Company page" : "Strona firmowa"}</h4>
+					<img src="manlaptop.jpg" alt="" />
 					<p>
 						{isEngLang
 							? "A company website I developed while working there, built using React and styled-components. I designed and implemented a unique web experience for a printing company specializing in plotter printing and custom stickers."
@@ -336,7 +335,7 @@ const ProjectsSection = ({ isEngLang }) => {
 					</div>
 				</div>
 				<div className="block includeInFlow">
-					<img src="marioSite2.png" alt="mario" />
+					<img src="marioSite2.png" alt="" />
 					<div className="secondBlock">
 						<h4>{isEngLang ? "JS Mario game" : "JS gra Mario"}</h4>
 						<p>

@@ -56,7 +56,7 @@ const Container = styled.section`
 		row-gap: 0.7rem;
 		column-gap: 0.7rem;
 
-		margin-top: 1.5rem;
+		margin: 2rem;
 
 		span {
 			font-size: clamp(1.25rem, 0.836rem + 2.21vw, 2.25rem);

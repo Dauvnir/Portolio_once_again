@@ -28,7 +28,7 @@ const Wrapper = styled.section`
 		color: ${({ theme }) => theme.reverseFontColor};
 		background-color: ${({ theme }) => theme.menuColor};
 
-		width: clamp(16rem, 8.778rem + 38.52vw, 55rem);
+		width: clamp(16rem, -0.16rem + 86.19vw, 55rem);
 		flex-grow: 1;
 		height: auto;
 		max-height: 30rem;
@@ -64,6 +64,7 @@ const Wrapper = styled.section`
 			display: flex;
 			flex-direction: column;
 			gap: 1rem;
+
 			@media screen and (min-width: 600px) {
 				width: 55%;
 				height: 100%;
