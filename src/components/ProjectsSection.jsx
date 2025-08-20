@@ -133,7 +133,7 @@ const Wrapper = styled.section`
 			flex-direction: row;
 
 			gap: 0.25rem;
-			padding-right: .25rem;
+			padding-right: 0.25rem;
 
 			.secondBlock {
 				width: 60%;
@@ -225,7 +225,7 @@ const Wrapper = styled.section`
 		}
 	}
 
-	.excludeFromFlow {
+	/* .excludeFromFlow {
 		@media screen and (max-width: 1023px) {
 			display: flex;
 		}
@@ -240,7 +240,7 @@ const Wrapper = styled.section`
 		@media screen and (min-width: 1024px) {
 			display: flex;
 		}
-	}
+	} */
 `;
 
 const ProjectsSection = ({ isEngLang }) => {
@@ -249,9 +249,9 @@ const ProjectsSection = ({ isEngLang }) => {
 			<h3>{isEngLang ? "My coding journey" : "Moja programowa przygoda"}</h3>
 			<h2>{isEngLang ? "Projects" : "Projekty"}</h2>
 			<div id="track">
-				<div className="block excludeFromFlow">
+				<div className="block">
 					<h4>{isEngLang ? "Library & API" : "Biblioteka i API"}</h4>
-					<img src="manlaptop.jpg" alt="" />
+					<img src="astralLogo.png" alt="astralLogo" />
 					<p>
 						{isEngLang
 							? "An online library that tracks real-time updates from other websites. Includes a personal collection feature and the ability to create an account, powered by a custom-built Node.js server."
@@ -270,9 +270,9 @@ const ProjectsSection = ({ isEngLang }) => {
 						</button>
 					</div>
 				</div>
-				<div className="block excludeFromFlow">
+				<div className="block">
 					<h4>{isEngLang ? "JS Mario game" : "JS gra Mario"}</h4>
-					<img src="marioSite1.png" alt="" />
+					<img src="mario-logo.png" alt="marioGameLogo" />
 
 					<p>
 						{isEngLang
@@ -292,9 +292,9 @@ const ProjectsSection = ({ isEngLang }) => {
 						</button>
 					</div>
 				</div>
-				<div className="block excludeFromFlow">
+				<div className="block">
 					<h4>{isEngLang ? "Company page" : "Strona firmowa"}</h4>
-					<img src="manlaptop.jpg" alt="" />
+					<img src="logoprolabel.png" alt="comapnyLogo" />
 					<p>
 						{isEngLang
 							? "A company website I developed while working there, built using React and styled-components. I designed and implemented a unique web experience for a printing company specializing in plotter printing and custom stickers."
@@ -313,7 +313,7 @@ const ProjectsSection = ({ isEngLang }) => {
 						</button>
 					</div>
 				</div>
-				<div className="block includeInFlow">
+				{/* <div className="block includeInFlow">
 					<img src="manlaptop.jpg" alt="" />
 					<div className="secondBlock">
 						<h4>{isEngLang ? "Library & API" : "Biblioteka i API"}</h4>
@@ -382,7 +382,7 @@ const ProjectsSection = ({ isEngLang }) => {
 							</button>
 						</div>
 					</div>
-				</div>
+				</div> */}
 			</div>
 		</Wrapper>
 	);
