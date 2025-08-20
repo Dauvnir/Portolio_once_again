@@ -10,7 +10,9 @@ const Wrapper = styled.section`
 	align-items: center;
 	flex-direction: column;
 
-	margin-bottom: 2rem;
+	h2 {
+		margin-bottom: 2rem;
+	}
 	#container {
 		width: 100%;
 		height: auto;
@@ -22,7 +24,6 @@ const Wrapper = styled.section`
 		flex-wrap: wrap;
 		gap: 2rem;
 
-		margin: 2rem;
 		#contactWrapper {
 			width: 16rem;
 			height: auto;
@@ -93,11 +94,11 @@ const Wrapper = styled.section`
 			flex-direction: column;
 			flex-wrap: nowrap;
 
-			width: 16rem;
-			@media screen and (min-width: 700px) {
-				width: clamp(16rem, 5.839rem + 23.23vw, 25rem);
+			width: 100%;
+			max-width: 25rem;
+			@media screen and (min-width: 1024px) and (min-height: 800px) {
+				max-width: 27.5rem;
 			}
-
 			height: auto;
 
 			padding: 1rem;
@@ -150,7 +151,12 @@ const Wrapper = styled.section`
 			input {
 				width: 100%;
 				height: 2.5rem;
-
+				@media screen and (min-width: 1024px) {
+					height: 3rem;
+				}
+				@media screen and (min-width: 1024px) and (min-height: 800px) {
+					height: 3.25rem;
+				}
 				border-radius: 10px;
 				border: none;
 
