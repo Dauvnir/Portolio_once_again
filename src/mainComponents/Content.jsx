@@ -18,6 +18,7 @@ const Wrapper = styled.div`
 	scroll-behavior: smooth;
 	scroll-snap-type: y mandatory;
 	overflow-y: scroll;
+	scrollbar-color: ${({ theme }) => theme.menuColor} ${({ theme }) => theme.backgroundColor};
 `;
 const Content = ({ isEngLang }) => {
 	return (

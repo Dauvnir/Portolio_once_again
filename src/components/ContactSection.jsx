@@ -175,7 +175,12 @@ const Wrapper = styled.section`
 				width: 100%;
 				height: 6rem;
 
-				overflow: scroll;
+				overflow-y: scroll;
+				scrollbar-color: ${({ theme }) => theme.backgroundColor} white;
+				::-webkit-scrollbar-thumb {
+					border-radius: 10px;
+				}
+				scroll-margin: 2rem;
 				resize: none;
 
 				padding: 0.25rem 0.5rem;

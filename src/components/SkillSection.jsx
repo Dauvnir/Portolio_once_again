@@ -24,8 +24,9 @@ const Container = styled.section`
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-
-	overflow: hidden;
+	h2 {
+		margin-bottom: 1rem;
+	}
 	.skillBtn {
 		width: auto;
 		height: clamp(3rem, 1.757rem + 6.63vw, 6rem);
@@ -55,8 +56,6 @@ const Container = styled.section`
 
 		row-gap: 0.7rem;
 		column-gap: 0.7rem;
-
-		margin: 2rem;
 
 		span {
 			font-size: clamp(1.25rem, 0.836rem + 2.21vw, 2.25rem);

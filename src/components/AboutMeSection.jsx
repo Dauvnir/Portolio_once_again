@@ -57,7 +57,8 @@ const Wrapper = styled.section`
 			width: 100%;
 			height: 45%;
 
-			overflow: scroll;
+			overflow-y: scroll;
+			scrollbar-color: ${({ theme }) => theme.backgroundColor} ${({ theme }) => theme.menuColor};
 			text-align: left;
 
 			display: flex;

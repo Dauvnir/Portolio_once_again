@@ -51,7 +51,6 @@ a {
 	height: calc(100svh - 4rem - 5rem);
 	width: 100%;
 	overflow: hidden;
-
 	scroll-snap-align: start;
 	scroll-snap-stop: always;
 }

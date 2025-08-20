@@ -2,6 +2,9 @@ import { useEffect, useRef } from "react";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
+	width: 100%;
+	height: auto;
+
 	opacity: 0;
 	transition: opacity 1s ease-out;
 	will-change: opacity;
