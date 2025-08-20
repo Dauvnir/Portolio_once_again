@@ -21,6 +21,9 @@ export const lightTheme = {
 		github: "/github_blue_light.png",
 		linkedin: "/linkedin_blue_light.png",
 	},
+	logo: {
+		prolabel: "/logoprolabel2.png",
+	},
 };
 
 export const darkTheme = {
@@ -45,5 +48,8 @@ export const darkTheme = {
 		whatsapp: "/whatsup_blue.png",
 		github: "/github_blue.png",
 		linkedin: "/linkedin_blue.png",
+	},
+	logo: {
+		prolabel: "/logoprolabel.png",
 	},
 };

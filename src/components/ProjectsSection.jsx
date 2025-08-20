@@ -19,30 +19,27 @@ const Wrapper = styled.section`
 
 		width: 100%;
 		height: 100%;
+		@media screen and (min-height: 610px) and (min-width: 1024px) {
+			max-height: 35rem;
+		}
+
 		overflow: hidden;
-
-		margin: 2rem;
-
-		@media screen and (min-width: 930px) {
-			height: auto;
-		}
-		@media screen and (min-width: 1024px) {
-			height: auto;
-
-			flex-grow: 1;
-			column-gap: 2rem;
-			row-gap: 0;
-			align-items: center;
-			overflow: hidden;
-		}
-		@media screen and (min-width: 1024px) and (max-height: 610px) {
-			flex-grow: 0;
-		}
+		column-gap: 2rem;
+		row-gap: 2rem;
 	}
 
 	.block {
-		width: 18rem;
+		width: 100%;
+		max-width: 18rem;
 		height: 22rem;
+		@media screen and (min-width: 1024px) {
+			width: 30%;
+			max-width: 35rem;
+		}
+		@media screen and (min-height: 610px) and (min-width: 1024px) {
+			height: 90%;
+			max-height: 35rem;
+		}
 
 		display: flex;
 		flex-direction: column;
@@ -54,15 +51,15 @@ const Wrapper = styled.section`
 
 		border-radius: 15px;
 
-		@media screen and (max-width: 622px) {
-			width: clamp(18rem, 13.342rem + 24.84vw, 23rem);
-		}
-
 		img {
 			width: auto;
 			height: 30%;
-
-			object-fit: cover;
+			flex-grow: 1;
+			object-fit: contain;
+			padding: 0.5rem 1rem;
+		}
+		#imgCompany {
+			content: url(${({ theme }) => theme.logo.prolabel});
 		}
 		h4 {
 			width: 100%;
@@ -70,57 +67,72 @@ const Wrapper = styled.section`
 			padding-top: 0.5rem;
 
 			font-size: 1.5rem !important;
+			@media screen and (min-width: 1024px) {
+				font-size: 2.2rem !important;
+			}
 		}
 		p {
 			width: 100%;
-			height: 40%;
+			height: 35%;
 
 			text-align: left;
 			padding: 0.5rem 1rem;
 
-			overflow-y: scroll;
+			overflow-y: auto;
 			scrollbar-color: ${({ theme }) => theme.backgroundColor} ${({ theme }) => theme.menuColor};
 
 			font-size: 1.125rem;
 			font-weight: 500;
-
-			flex-grow: 1;
+			@media screen and (min-width: 1024px) {
+				font-size: 1.35rem;
+			}
 		}
 		div {
 			width: 100%;
 			height: 20%;
 
 			display: flex;
-			justify-content: center;
+			justify-content: space-evenly;
 			align-items: center;
-			gap: 1rem;
 			button {
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				width: 7.5rem;
-				height: 3rem;
-
-				padding: 0.5rem;
+				width: 40%;
+				max-width: 10rem;
+				height: 70%;
+				max-height: 4rem;
 
 				border-radius: 15px;
 				border: none;
 				cursor: pointer;
 
 				background-color: ${({ theme }) => theme.backgroundColor};
-
+				will-change: background-color;
+				transition: background-color 0.5s ease;
+				&:hover {
+					background-color: ${({ theme }) => theme.backgroundColor};
+					a {
+						color: ${({ theme }) => theme.fontColor};
+					}
+				}
 				a {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+
 					height: 100%;
 					width: 100%;
 					text-decoration: none;
 					color: ${({ theme }) => theme.fontColor};
 
-					font-weight: none;
+					font-weight: 500;
 					font-size: 0;
+
 					span {
 						white-space: nowrap;
 						font-weight: 700;
 						font-size: 1.25rem;
+						@media screen and (min-width: 1024px) {
+							font-size: 1.5rem;
+						}
 					}
 				}
 			}
@@ -149,7 +161,7 @@ const ProjectsSection = ({ isEngLang }) => {
 							</a>
 						</button>
 						<button>
-							<a href="https://github.com/Dauvnir?tab=repositories&q=&type=&language=&sort=name" target="_blank">
+							<a href="https://github.com/Dauvnir/Project_Astral_Backend" target="_blank">
 								<span>GitHub</span>
 							</a>
 						</button>
@@ -179,7 +191,7 @@ const ProjectsSection = ({ isEngLang }) => {
 				</div>
 				<div className="block">
 					<h4>{isEngLang ? "Company page" : "Strona firmowa"}</h4>
-					<img src="logoprolabel.png" alt="comapnyLogo" />
+					<img alt="comapnyLogo" id="imgCompany" />
 					<p>
 						{isEngLang
 							? "A company website I developed while working there, built using React and styled-components. I designed and implemented a unique web experience for a printing company specializing in plotter printing and custom stickers."
