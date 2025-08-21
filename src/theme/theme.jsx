@@ -1,7 +1,7 @@
 export const lightTheme = {
 	backgroundColor: "#dbe1ff",
 	menuColor: "#0e1225",
-	fontColor: "#070912",
+	fontColor: "#0e1225",
 	reverseFontColor: "#dbe1ff",
 	activeButtonColor: "#dbe1ff",
 	themeIcon: "/moon_blue.png",
@@ -27,10 +27,10 @@ export const lightTheme = {
 };
 
 export const darkTheme = {
-	backgroundColor: "#070912",
+	backgroundColor: "#0e1225",
 	menuColor: "#dbe1ff",
 	fontColor: "#dbe1ff",
-	reverseFontColor: "#070912",
+	reverseFontColor: "#0e1225",
 	activeButtonColor: "#0e1225",
 	themeIcon: "/sun_light.png",
 	menuIcons: {

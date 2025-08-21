@@ -71,13 +71,15 @@ const Section = styled.section`
 					cursor: pointer;
 					background: none;
 
-					background-color: ${({ theme }) => theme.fontColor};
-					border: 3px solid ${({ theme }) => theme.fontColor};
+					
 					border-radius: 15px;
 
 					padding-block: 0.75rem;
 					padding-inline: clamp(0.5rem, 0.361rem + 0.74vw, 1.25rem);
 
+					background-color: ${({ theme }) => theme.fontColor};
+					border: 3px solid ${({ theme }) => theme.fontColor};
+					
 					will-change: background-color;
 					transition: background-color 0.5s ease;
 					&:hover {

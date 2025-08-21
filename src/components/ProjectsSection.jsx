@@ -104,13 +104,14 @@ const Wrapper = styled.section`
 				border: none;
 				cursor: pointer;
 
+				border: 3px solid ${({ theme }) => theme.reverseFontColor};
 				background-color: ${({ theme }) => theme.backgroundColor};
 				will-change: background-color;
 				transition: background-color 0.5s ease;
 				&:hover {
-					background-color: ${({ theme }) => theme.backgroundColor};
+					background-color: ${({ theme }) => theme.menuColor};
 					a {
-						color: ${({ theme }) => theme.fontColor};
+						color: ${({ theme }) => theme.reverseFontColor};
 					}
 				}
 				a {

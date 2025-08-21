@@ -24,6 +24,9 @@ const Container = styled.section`
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+
+	max-width: 90rem;
+	margin-inline: auto;
 	h2 {
 		margin-bottom: 1rem;
 	}

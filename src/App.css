@@ -48,15 +48,18 @@ a {
 
 .section {
 	/* // height of section is 100svh - setting bar - mobile menu */
-	height: calc(100svh - 4rem - 5rem);
+	min-height: calc(100svh - 4rem - 5rem);
 	width: 100%;
-	overflow: hidden;
 	scroll-snap-align: start;
 	scroll-snap-stop: always;
+	margin-bottom: 2rem;
 }
 @media screen and (min-width: 1024px) {
 	.section {
 		height: calc(100svh - 4rem);
+		min-height:calc(100svh - 4rem);
+		margin-bottom: 0rem;
+		overflow: hidden;
 	}
 }
 

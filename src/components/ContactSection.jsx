@@ -222,6 +222,18 @@ const Wrapper = styled.section`
 				cursor: pointer;
 
 				background-color: ${({ theme }) => theme.backgroundColor};
+				border: 3px solid ${({ theme }) => theme.reverseFontColor};;
+
+				will-change: background-color;
+				transition: background-color 0.5s ease;
+
+				&:hover{
+					background-color: ${({ theme }) => theme.menuColor};
+
+					span{
+						color: ${({ theme }) => theme.reverseFontColor};
+					}
+				}
 				span {
 					will-change: color;
 					transition: color 0.5s ease;
