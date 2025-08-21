@@ -9,6 +9,12 @@ const Wrapper = styled.section`
 	text-align: center;
 	color: ${({ theme }) => theme.fontColor};
 
+		@media screen and (max-width: 959px){
+			h2{
+				margin-bottom: 2rem;
+
+			}
+		}
 	#track {
 		display: flex;
 		justify-content: center;
