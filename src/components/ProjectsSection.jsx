@@ -148,7 +148,7 @@ const ProjectsSection = ({ isEngLang }) => {
 			<div id="track">
 				<div className="block">
 					<h4>{isEngLang ? "Library & API" : "Biblioteka i API"}</h4>
-					<img src="astralLogo.png" alt="astralLogo" />
+					<img src="Astral-logo.png" alt="astralLogo" />
 					<p>
 						{isEngLang
 							? "An online library that tracks real-time updates from other websites. Includes a personal collection feature and the ability to create an account, powered by a custom-built Node.js server."
